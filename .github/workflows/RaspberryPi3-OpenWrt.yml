@@ -341,11 +341,11 @@ jobs:
         name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
         tag: ${{ env.FIRMWARE_TAG }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ACTION_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           * 这是 ${{ env.FIRMWARE_TAG }} 使用的 OpenWrt 固件
-          默认 IP：192.168.1.1 默认密码：password
+          默认 IP：192.168.13.111 默认密码：password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.VERSION_INFO }}
