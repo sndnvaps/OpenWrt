@@ -4,6 +4,7 @@
 # Lisence: MIT
 # Author: P3TERX
 # https://github.com/P3TERX
+# Every Sat 19:00 to autobuild
 #===============================================
 
 name: RaspberryPi4 OpenWrt
@@ -11,7 +12,7 @@ name: RaspberryPi4 OpenWrt
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 17 * * *
+    - cron: 0 0 19 ? * SAT
 
 env:
   SOURCE_URL: https://github.com/coolsnowwolf/lede
@@ -344,6 +345,6 @@ jobs:
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
           * 这是 ${{ env.FIRMWARE_TAG }} 使用的 OpenWrt 固件
-          默认 IP：192.168.1.1 默认密码：password
+          默认 IP：192.168.13.111 默认密码：password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.VERSION_INFO }}
